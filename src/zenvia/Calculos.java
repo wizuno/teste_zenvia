@@ -11,34 +11,42 @@ package zenvia;
  */
 public class Calculos {
     
-    boolean MultiploDeTres(int numero){
-        
-        if(numero%3 ==0){
-            return true;
-        }
-        else{
-        return false;    
-        } 
+    public int resp =1;
+    
+    void Multiplos3E5 (int numero){
+     
+          if(numero%3 == 0 && numero%5 == 0){
+                System.out.println("FizzBuzz");
+                resp = 0;
+            }
+            else{
+              Multiplos3(numero);
+          }
+                 
     }
     
-    boolean MultiploDeCinco(int numero){
+    void Multiplos3 (int numero){
         
-        if(numero%5 ==0){
-            return true;
+        if(numero%3 == 0){
+            System.out.println("Fizz");
+            resp = 0;
         }
         else{
-        return false;    
+            Multiplos5(numero);
         }
+        
     }
     
-    boolean MultiploDeTresECinco(int numero){
+    void Multiplos5(int numero){
         
-        if(numero%3 == 0 && numero%5 == 0){
-            return true;
+        if(numero%5 == 0){
+            System.out.println("Buzz");
+            resp =0;
         }
         else{
-        return false;    
-        }
+            resp = 4;
+            System.out.println(numero);
+        }    
     }
     
 }
