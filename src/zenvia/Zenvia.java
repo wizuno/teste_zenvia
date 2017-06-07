@@ -19,7 +19,10 @@ public class Zenvia {
         Calculos c = new Calculos();
         
         for(int i=1; i <101; i++){
-            c.Multiplos3E5(i);
+            c.Mu3E5(i);
+            c.Mu3(i);
+            c.Mu5(i);
+            c.MuN(i);
         }
     }
     
