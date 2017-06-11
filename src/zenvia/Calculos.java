@@ -11,143 +11,97 @@ package zenvia;
  */
 public class Calculos {
     
-    public int resp =1;
+    public String msg = "";
+    private int resto;
+    private int resto1;
     
-    
-    /*
-    void Multiplos3E5 (int numero){
-     
-          if(numero%3 == 0 && numero%5 == 0){
-                System.out.println("FizzBuzz");
-                resp = 0;
-            }
-            else{
-              Multiplos3(numero);
-          }
-                 
-    }
-    
-    void Multiplos3 (int numero){
+    /* O problema com esse código ao meu ver, é que uma hora vou ter que validar o resultado, 
+       e recebendo também a mensagem que quer que seja exibida*/
+    String Calculo1 (int dividendo, int divisor, String mensagem){
+   
+        resto = dividendo % divisor;
         
-        if(numero%3 == 0){
-            System.out.println("Fizz");
-            resp = 0;
+        if(resto != 0){
+            mensagem = Integer.toString(dividendo);
         }
-        else{
-            Multiplos5(numero);
-        }
+        
+        return mensagem;
         
     }
     
-    void Multiplos5(int numero){
-        
-        if(numero%5 == 0){
-            System.out.println("Buzz");
-            resp =0;
-        }
-        else{
-            resp = 4;
-            System.out.println(numero);
-        }    
-    } 
-    
-    void Multiplos(int numero){
-        int m3;
-        int m5;
-        int m35;
-        
-        m35 = numero%15;
-        m3 = numero%3;
-        m5 = numero%5;
-        
-        switch(m35){
-            case 0:
-                System.out.println("BuzzFizz");
+     /* O problema com esse código ao meu ver, é que uma hora vou ter que validar o resultado*/
+    String Calculo1_2 (int dividendo, int divisor){
+   
+        switch (divisor){
+            case 3:
+                msg = "Fizz";
                 break;
-            default:
-                switch(m3){
-                    case 0:
-                        System.out.println("Buzz");
-                        break;
-                    default:
-                        switch (m5){
-                        case 0:
-                            System.out.println("Fizz");
-                            break;
-                        default:
-                            System.out.println(numero);
-                            break;
-                        }
-                }
-        }  
-    } 
-    
-    void Teste (int numero){
+            case 5:
+                msg = "Buzz";
+                break;
+            case 15:
+                msg = "FizzBuzz";
+                break;
+        }
         
-        int m3;
-        int m5;
-        int m35;
+        resto = dividendo % divisor;
         
-        m35 = numero%15;
-        m3 = numero%3;
-        m5 = numero%5;
+        if(resto != 0){
+            msg = Integer.toString(dividendo);
+        }
         
-        if(m35 !=0 && m3 != 0 && m5 != 0){
-           System.out.println(numero); 
-        }
-        if(m35 == 0){
-            System.out.println("BuzzFizz");
-        }
-        if(m3 == 0){
-            System.out.println("Buzz");
-        }
-        if(m5 == 0){
-            System.out.println("Fizz");
-        }
-    } */
-    
-    int Mu3E5(int numero){
-        int r = numero%15;
+        return msg;
         
-        if(r == 0){
-            //System.out.println("BuzzFizz");
-            resp=0;
-        }
-        return resp;
     }
     
-    int Mu3(int numero){
-        int r = numero%3;
-        int r1 = numero%5;
+    /* Ao meu ver o problema seriam os 4 ifs */
+    String Calculo2 (int dividendo){
         
-        if(r == 0 && r1 != 0){
-            //System.out.println("Buzz");
-            resp=0;
+        int resto1 = 0;
+        int resto2 = 0;
+        
+        resto1 = dividendo % 3;
+        resto2 = dividendo % 5;
+        
+        if(resto1 == 0 && resto2 == 0){
+            msg = "FizzBuzz";
         }
-        return resp;
+        
+        if(resto1 == 0 && resto2 != 0){
+            msg = "Fizzz";
+        }
+        
+        if(resto1 != 0 && resto2 == 0){
+            msg = "Buzz";
+        }
+        
+        if(resto1 != 0 && resto2 != 0){
+            msg = Integer.toString(dividendo);
+        }
+        
+        return msg;
     }
     
-    int Mu5(int numero){
-        int r = numero%5;
-        int r1 = numero%3;
+    /* Nesse caso, eu deixei mais generico para receber dois números quaisquer */
+    String Calculo2_1 (int dividendo, int divisor, int divisor2){
         
-        if(r == 0 && r1 != 0){
-            //System.out.println("Fizz");
-            resp=0;
-        }
-        return resp;
-    }
-    
-    int MuN(int numero){
-        int r = numero%15;
-        int r1 = numero%3;
-        int r2 = numero%5;
+        resto = dividendo % divisor;
+        resto1 = dividendo % divisor2;
         
-        if(r != 0 && r1 != 0 && r2 != 0){
-            //System.out.println(numero);
-            resp=0;
+        if(resto1 == 0 && resto == 0){
+            msg = "FizzBuzz";
         }
-        return resp;
+        if(resto == 0 && resto1 != 0){
+            msg = "Fizz";
+        }
+        if(resto != 0 && resto1 == 0){
+            msg = "Buzz";
+        }
+        if(resto != 0 && resto1 != 0){
+            msg = Integer.toString(dividendo);
+        }
+        
+        return msg;
     }
-    
+
 }
