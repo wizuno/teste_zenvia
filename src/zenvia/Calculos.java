@@ -54,7 +54,7 @@ public class Calculos {
         
     }
     
-    /* Ao meu ver o problema seriam os 4 ifs */
+    /* Ao meu ver o problema seriam os 3 ifs */
     String Calculo2 (int dividendo){
         
         
