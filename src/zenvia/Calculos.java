@@ -57,28 +57,24 @@ public class Calculos {
     /* Ao meu ver o problema seriam os 4 ifs */
     String Calculo2 (int dividendo){
         
-        int resto1 = 0;
-        int resto2 = 0;
         
-        resto1 = dividendo % 3;
-        resto2 = dividendo % 5;
+        resto = dividendo % 3;
+        resto1 = dividendo % 5;
         
-        if(resto1 == 0 && resto2 == 0){
+        msg = Integer.toString(dividendo);
+        
+        if(resto == 0 && resto1 == 0){
             msg = "FizzBuzz";
         }
         
-        if(resto1 == 0 && resto2 != 0){
+        if(resto == 0 && resto1 != 0){
             msg = "Fizzz";
         }
         
-        if(resto1 != 0 && resto2 == 0){
+        if(resto != 0 && resto1 == 0){
             msg = "Buzz";
         }
-        
-        if(resto1 != 0 && resto2 != 0){
-            msg = Integer.toString(dividendo);
-        }
-        
+
         return msg;
     }
     
@@ -88,6 +84,7 @@ public class Calculos {
         resto = dividendo % divisor;
         resto1 = dividendo % divisor2;
         
+        msg = Integer.toString(dividendo);
         if(resto1 == 0 && resto == 0){
             msg = "FizzBuzz";
         }
@@ -97,10 +94,7 @@ public class Calculos {
         if(resto != 0 && resto1 == 0){
             msg = "Buzz";
         }
-        if(resto != 0 && resto1 != 0){
-            msg = Integer.toString(dividendo);
-        }
-        
+
         return msg;
     }
 
