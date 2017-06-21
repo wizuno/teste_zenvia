@@ -9,14 +9,9 @@ package zenvia;
  *
  * @author willhs
  */
-public class Zenvia {
+public interface Multiplos {
+    
+    String calculoMultiplos(int dividendo, int numeroFizz, int numeroBuzz);
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        
-    }
     
 }

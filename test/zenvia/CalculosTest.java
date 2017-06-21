@@ -18,50 +18,46 @@ public class CalculosTest {
     
     Calculos c = new Calculos();
     
-    
     @Test
-    public void testMultiplos3E5() {
+    public void testMultiplosDe3E5(){
         
-        assertEquals("Multiplo de 3 e 5",0,c.Mu3E5(15));
-        
-    }
-
-    @Test
-    public void testNaoMultiplos3E5() {
-        
-        assertEquals("Nao multiplo de 3 e 5",1,c.Mu3E5(16));
-
-    }
-    
-    @Test
-    public void testMultiplos3() {
-        
-        assertEquals("Multiplo de 3",0,c.Mu3(3));  
-    }
-    
-    @Test
-    public void testNaoMultiplos3() {
-        
-        assertEquals("Nao multiplo de 3",1,c.Mu3(4));
+        assertEquals("Multiplo de 3 e 5","FizzBuzz", c.calculoMultiplos(15, 3, 5));
         
     }
     
     @Test
-    public void testMultiplos5() {
+    public void testNaoMultiplosDe3E5(){
         
-        assertEquals("Multiplo 5",0,c.Mu5(5));    
+        assertEquals("Não Multiplo de 3 e 5","16", c.calculoMultiplos(16, 3, 5));
+        
     }
     
     @Test
-    public void testNaoMultiplos5() {
+    public void testMultiplosDe3(){
         
-        assertEquals("Nao multiplo 5",1,c.Mu5(6));
+        assertEquals("Multiplo de 3","Fizz", c.calculoMultiplos(3, 3, 5));
+        
     }
     
     @Test
-    public void NaoMultiplo(){
+    public void testNaoMultiplosDe3(){
         
-        assertEquals("Nao multiplo",0,c.MuN(7));
+        assertEquals("Não Multiplo de 3","4", c.calculoMultiplos(4, 3, 5));
+        
     }
     
+    @Test
+    public void testMultiplosDe5(){
+        
+        assertEquals("Multiplo de 5","Buzz", c.calculoMultiplos(5, 3, 5));
+        
+    } 
+    
+    @Test
+    public void testNaoMultiplosDe5(){
+        
+        assertEquals("Não Multiplo de 5","7", c.calculoMultiplos(7, 3, 5));
+        
+    } 
+      
 }
