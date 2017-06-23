@@ -10,33 +10,19 @@ package zenvia;
  * @author willhs
  */
 public class Calculos implements Multiplos {
-    
-    public String msg = "";
-    private int restoFizz;
-    private int restoBuzz;
 
     @Override
     public String calculoMultiplos(int dividendo, int numeroFizz, int numeroBuzz) {
-     
-        restoFizz = dividendo % numeroFizz;
-        restoBuzz = dividendo % numeroBuzz;
-        
-        msg = Integer.toString(dividendo);
-        
-        if(restoFizz == 0 && restoBuzz == 0){
-            msg = "FizzBuzz";
-            return msg;
+         
+        if(dividendo % numeroFizz == 0 && dividendo % numeroBuzz == 0){
+            return "FizzBuzz";
         }
-        if(restoFizz == 0){
-            msg = "Fizz";
-            return msg;
+        if(dividendo % numeroFizz == 0){
+            return "Fizz";
         }
-        if(restoBuzz == 0){
-            msg = "Buzz";
-            return msg;
+        if(dividendo % numeroBuzz == 0){
+            return "Buzz";
         }
-
-        return msg;
-    }
-    
+        return Integer.toString(dividendo);
+    }   
 }
