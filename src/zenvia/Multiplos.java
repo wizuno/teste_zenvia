@@ -12,6 +12,7 @@ package zenvia;
 public interface Multiplos {
     
     String calculoMultiplos(int dividendo, int numeroFizz, int numeroBuzz);
+    String calculoMultiplos2(int dividendo, int numeroFizz, int numeroBuzz);
 
     
 }
