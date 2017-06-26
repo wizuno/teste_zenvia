@@ -10,7 +10,10 @@ package zenvia;
  * @author willhs
  */
 public class Calculos implements Multiplos {
-
+    
+    String msgFinal;
+    String msgMultiplos;
+    
     @Override
     public String calculoMultiplos(int dividendo, int numeroFizz, int numeroBuzz) {
          
@@ -25,4 +28,23 @@ public class Calculos implements Multiplos {
         }
         return Integer.toString(dividendo);
     }   
+    
+    @Override
+    public String calculoMultiplos2(int dividendo, int numeroFizz, int numeroBuzz) {
+         
+        msgFinal = Integer.toString(dividendo);
+        msgMultiplos = "";
+        
+        if(dividendo % numeroFizz == 0){
+            msgFinal = "";
+            msgMultiplos = "Fizz";
+        }
+        if(dividendo % numeroBuzz == 0){
+            msgFinal = "";
+            msgMultiplos = msgMultiplos + "Buzz";
+        }
+        msgFinal = msgFinal + msgMultiplos;
+        
+        return msgFinal;
+    }  
 }
